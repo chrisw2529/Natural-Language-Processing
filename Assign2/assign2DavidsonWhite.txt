@@ -1,0 +1,23 @@
+•
+Find edit distance 1 corrections that are valid words
+•
+For each correction
+–
+  Determine the edit involved
+–
+    Compute the error model probability by:
+–
+      Finding the edit count in the confusion table
+–
+      Dividing this by undamaged character count from the 
+      data
+–
+  Multiply by the frequency of the corrected word
+•
+Normalise so all probabilities add to 1
+
+
+First, the candidates for the misspelled word, acress, are generated from a list of all known words one or
+two edits away from acress. Then, for each candidate, determine what edit is necessary to correct the misspelled 
+word. For example,  acress to actress requires inserting a 't' after the 'c' and before the 'r'. 
+

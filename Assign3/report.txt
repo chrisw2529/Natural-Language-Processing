@@ -1,0 +1,15 @@
+Chris White
+Shawn Davidson
+Assignment 3 report
+NLP fall 2018
+10/24/2018
+
+for this report we made the assumption that the <UNK> token was treated as its own token with multipul occurences
+we also computed the perplexity taking these steps:
+	1. sperated the test document into separate sentences and added <s> to the start of the sentence and </s> to the end of each sentence. 
+	2. calculated the perplexity of the first sentence, for bigrams we calculated the prob. that word(i) appered given that word(i-1) had appered with a smoothing of 0.01 we then took the log in base 2 of that probability and summed the logs of all of the probabilites for that sentence to get the perplexity of that sentence.
+	3. we calculated the perplexity of every sentence took the log2 of that perplexity and then summed the logs together for every sentence.  we then multipklied that number by -1 then divided it by the total number of words
+	4. we then got the number out of log form by using 2 to the power of our perplexity
+
+our perplexities we as follows:
+unigram = 

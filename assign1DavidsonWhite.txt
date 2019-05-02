@@ -1,0 +1,71 @@
+Shawn Davidson
+Chris White
+CSCI 404 - Fall 2018
+Assignment 1
+
+
+1. # of sentences: 22
+  Used sent_tokenize() to break the text into sentences, and len() to get the sentence count.   
+
+
+2. a) 1439729
+   Used word_tokenize() on the text from 'nc.txt', and len() to get the count.
+   b) 36678
+   Used len(set(word_tokenize()))
+   c) (36678/1439729) * 100 = 2.5475627704936138 %
+   d) the;81774     5.67981891036438%
+      ,;73224       5.085957148880102%
+      .;55707       3.869269841754942%
+      of;40808      2.8344223114211076%
+      to;36602      2.5422839992804205%
+      and;34336     2.384893268108095%
+      in;28622      1.9880130218950927%
+      a;25986       1.8049230098164306%
+      is;18648      1.2952437576793965%
+      that;17638    1.2250916665566924%
+   Used FreqDist() and FreqDist.most_common(10). Divided the frequency by the total # of tokens.
+ 
+   e) Removed punctuation and stopwords with the "stopwords.txt" file with regular punctuation marks as well as: 's, 't, '', ``, and -- appended to the list.
+   The command used was no_stop = [word for word in nc if word not in stopwords]
+   FreqDist to get the count. Divided the frequency by the total # of tokens.
+
+	'world', 2760 		0.19170274405808316%	
+	'countries', 2741 	0.19038305125478475%
+	'europe', 2714 		0.18850769832378175%
+	'government', 2512	0.1744772800992409%
+	'political', 2340 	0.1744772800992409%
+	'economic', 2268	0.15752964620425094%
+ 	'european', 2170 	0.15072280963986973%
+	'china', 2111 		0.14662481619804837%
+	'people', 2056 		0.14280465282007934%
+	'years', 1898		0.1318303652979137%
+
+   f)	Used nltk.bigrams() to split the pairs, FreqDist to get the count.
+ 
+	('united', 'states'), 685) 	0.14669570599182358%
+	(('european', 'union'), 415), 	0.08887404085636028%
+	(('latin', 'america'), 401), 	0.08587588044192886%
+	(('middle', 'east'), 390), 	0.083520182973447%
+	(('prime', 'minister'), 358), 	0.07666724488331803%
+	(('interest', 'rates'), 357), 	0.0764530905680015%
+	(('years', 'ago'), 342), 	0.07324077583825353%
+	(('human', 'rights'), 333), 	0.07131338700040475%
+	(('member', 'states'), 288), 	0.061676442811160866%
+	(('foreign', 'policy'), 269)	0.057607510820146784%
+
+	total # of tuples = 466953
+
+   g)	Narrowed the text to only numbers by using isdigit() on each token, got the count of each through FreqDist. 
+[('20', 262), ('1990', 255), ('10', 245), ('30', 193), ('50', 182), ('1', 163), ('40', 161), ('1980', 157), ('45', 155), ('15', 144)]
+
+   h) Used FreqDist.hapaxes() to get the frequency of singletons.
+      Total count: 14346
+      percentage: (14346/1439729) * 100 = 0.996437524006254 %
+
+3. The TweetTokenizer separates tokens based on what would be considered a word on Twitter, whereas the WordPunctTokenizer separates based off spaces and punctuation.
+For example, TweetTokenizer keeps hashtags, links, and usernames together (e.g. '#career', '@zoopy'), meanwhile WordPunctTokenizer separates these into different tokens.
+TweetTokenizer also does not seperate japanese characters as the entire sentence appears as one word, while the WordPunctTokenizer separates the characters into word chunks. The TweetTokenizer also puts a 'u' in front of all tokens.  
+
+
+
+

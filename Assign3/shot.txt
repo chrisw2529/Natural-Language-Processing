@@ -1,0 +1,6 @@
+uni-perplexitySum= -3554805.75518
+uniPlex= 847.812062018
+bi-perplexitySum= -3885991.15473
+biPlex= 1588.97185679
+tri-perplexitySum= -5382967.46624
+triPlex= 27180.8091083
